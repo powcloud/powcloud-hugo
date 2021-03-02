@@ -8,7 +8,7 @@
 2. Add this module you want to import to your config.toml:
 ```
 [[module.imports]]
-    path="github.com/drush/powcloud-hugo"
+    path="github.com/powcloud/powcloud-hugo"
     disable=false
 ```
 
