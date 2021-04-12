@@ -1,0 +1,22 @@
+{{ if .Inner }}
+<script
+  type="module"
+  src="https://unpkg.com/ohm-js@latest/dist/ohm.min.js"
+></script>
+{{ end }}
+
+{{ $endpoint := "https://powcloud-dash-dev.herokuapp.com" }} <!-- TODO: remove. This is for testing purposes. Should resolve to prod dash in the wild.  -->
+
+<script
+  type="module"
+  src="{{ $endpoint }}/formtopia/js/formcomponent.js"
+  param="1"
+></script>
+
+{{ $key := cond (.IsNamedParams) (.Get "key") (.Get 0) }}
+
+<formtopia-form
+  endpoint="{{ $endpoint }}"
+  key="{{ $key }}"
+  >{{ .Inner }}</formtopia-form
+>
